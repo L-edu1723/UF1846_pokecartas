@@ -99,18 +99,151 @@ h1 {
     transition: transform 0.3s ease; /* Añade una transición suave al hacer hover */
     box-sizing: border-box;
 }
-.carta{
-    flex: 0 0 19%; /* Hace que cada carta ocupe el 20% del ancho disponible */
-    padding: 24px; /* Aumentamos el padding para más espacio dentro de la carta */
+
+/* Carta Dragón */
+.carta.dragón {
+    flex: 0 0 19%;
+    padding: 24px;
     border-radius: 12px;
-    border:2px solid #000;
-    
-    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2); /* Sombras más suaves para un mayor efecto visual */
+    border: 2px solid #000;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
     text-align: center;
-    background-color: #d3d1d1; /* Fondo blanco para las cartas */
-    transition: transform 0.3s ease; /* Añade una transición suave al hacer hover */
+    background-color: #6a3d9a; /* Morado para el tipo Dragón */
+    transition: transform 0.3s ease;
     box-sizing: border-box;
 }
+
+/* Carta Bicho */
+.carta.bicho {
+    flex: 0 0 19%;
+    padding: 24px;
+    border-radius: 12px;
+    border: 2px solid #000;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color: #8b9a2b; /* Verde oliva para el tipo Bicho */
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+
+/* Carta Lucha */
+.carta.lucha {
+    flex: 0 0 19%;
+    padding: 24px;
+    border-radius: 12px;
+    border: 2px solid #000;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color: #c0312d; /* Rojo para el tipo Lucha */
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Carta Volador */
+.carta.volador {
+    flex: 0 0 19%;
+    padding: 24px;
+    border-radius: 12px;
+    border: 2px solid #000;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color: #a1c3d1; /* Azul claro para el tipo Volador */
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Carta Fantasma */
+.carta.fantasma {
+    flex: 0 0 19%;
+    padding: 24px;
+    border-radius: 12px;
+    border: 2px solid #000;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color: #7d4c9c; /* Púrpura para el tipo Fantasma */
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Carta Tierra */
+.carta.tierra {
+    flex: 0 0 19%;
+    padding: 24px;
+    border-radius: 12px;
+    border: 2px solid #000;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color: #e0c68f; /* Marrón claro para el tipo Tierra */
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Carta Hielo */
+.carta.hielo {
+    flex: 0 0 19%;
+    padding: 24px;
+    border-radius: 12px;
+    border: 2px solid #000;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color: #5e9c9b; /* Azul glaciar para el tipo Hielo */
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Carta Normal */
+.carta.normal {
+    flex: 0 0 19%;
+    padding: 24px;
+    border-radius: 12px;
+    border: 2px solid #000;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color: #c8c8c8; /* Gris claro para el tipo Normal */
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Carta Veneno */
+.carta.veneno {
+    flex: 0 0 19%;
+    padding: 24px;
+    border-radius: 12px;
+    border: 2px solid #000;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color: #9b4a99; /* Morado oscuro para el tipo Veneno */
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Carta Psíquico */
+.carta.psiquico {
+    flex: 0 0 19%;
+    padding: 24px;
+    border-radius: 12px;
+    border: 2px solid #000;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color: #f84e4e; /* Rosa para el tipo Psíquico */
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Carta Roca */
+.carta.roca {
+    flex: 0 0 19%;
+    padding: 24px;
+    border-radius: 12px;
+    border: 2px solid #000;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color: #a38c60; /* Gris rocoso para el tipo Roca */
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
 .carta:hover {
     transform: translateY(-8px); /* Efecto de elevación al pasar el ratón */
 }

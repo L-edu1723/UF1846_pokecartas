@@ -60,8 +60,36 @@ if($pokeArray["tipos"][0]=="fire"){
     $class="planta";
 }elseif($pokeArray["tipos"][0]=="electric"){
     $class="electrico";
-}else{
-    $class="";
+}elseif($pokeArray["tipos"][0]=="dragon"){
+    $class="dragón";
+}elseif($pokeArray["tipos"][0] == "fighting"){
+    $class = "lucha";
+}
+elseif($pokeArray["tipos"][0] == "flying"){
+    $class = "volador";
+}
+elseif($pokeArray["tipos"][0] == "ghost"){
+    $class = "fantasma";
+}
+elseif($pokeArray["tipos"][0] == "ground"){
+    $class = "tierra";
+}
+elseif($pokeArray["tipos"][0] == "ice"){
+    $class = "hielo";
+}
+elseif($pokeArray["tipos"][0] == "normal"){
+    $class = "normal";
+}
+elseif($pokeArray["tipos"][0] == "poison"){
+    $class = "veneno";
+}
+elseif($pokeArray["tipos"][0] == "psychic"){
+    $class = "psiquico";
+}
+elseif($pokeArray["tipos"][0] == "rock"){
+    $class = "roca";
+}elseif($pokeArray["tipos"][0]=="bug"){
+    $class="bicho";
 }
 
 
