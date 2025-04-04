@@ -4,21 +4,105 @@
 function getPokemonData()
 {
     // 1) genera número aleatorio
-    // 2) lee el contenido de la api 
+    $Numero=rand(1,151);
+    // 2) lee el contenido de la api
+    $texto=file_get_contents("https://pokeapi.co/api/v2/pokemon/$Numero") ;
     // 3) lo decodifica
+    $pokemon=json_decode($texto,true);
     // 4) Creo un objeto pokemon (me quedo sólo con los datos que necesito):
+    $tipos=[];
+    foreach ($pokemon["types"] as $key => $value) {
+        // Si hay más de un tipo, lo iteramos
+        if (isset($value["type"]["name"])) {
+            array_push($tipos, $value["type"]["name"]);
+        }
+    }
+    $abilities=[];
+    foreach($pokemon["abilities"]as $key =>$value){
+        if(isset($value["ability"]["name"])){
+            array_push($abilities,$value["ability"]["name"]);
+        }
+    }
+    
+    $card=[
+        "nombre"=>$pokemon["name"],
+    "imagen"=>$pokemon["sprites"]['front_default'],
+    "shiny"=>$pokemon["sprites"]["front_shiny"],
+
+    "tipos"=>$tipos,
+    "habilidades"=>$abilities
+    ];
+
+    return $card;
+
     // nombre (name)
     // imagen (sprites[front_default])
     // tipos (types[]-> dentro de cada elemento [type][name])
-    return "pokemon";
+
 }
 
-$pokemon = getPokemonData();
+
+$pokemon1 = getPokemonData();
+$pokemon2 = getPokemonData();
+$pokemon3 = getPokemonData();
+$pokemon4 = getPokemonData();
+$pokemon5 = getPokemonData();
+
 
 
 function renderCards($pokeArray)
 {
-    // recibe datos y genera el html
+if($pokeArray["tipos"][0]=="fire"){
+    $class="fuego";
+}elseif($pokeArray["tipos"][0]=="water"){
+    $class="agua";
+}elseif($pokeArray["tipos"][0]=="planta"){
+    $class="planta";
+}elseif($pokeArray["tipos"][0]=="electric"){
+    $class="electrico";
+}else{
+    $class="";
+}
+
+
+
+
+
+    $probshiny=rand(1,20);
+    echo "<div class='carta $class'>";
+
+    if ($probshiny==1){
+        $classShiny ='shiny';
+        $img = 'shiny';
+    }else{
+        $classShiny ='';
+        $img = 'imagen';
+    };
+
+    
+
+echo "    <div class='img-container $classShiny'>";
+echo '        <img src="' . $pokeArray[$img] . '" alt="' . $pokeArray["nombre"] . '">';
+
+    echo '    </div>';
+    echo '    <div class="datos">';
+    echo '        <h3>' . ucfirst($pokeArray["nombre"]) . '</h3>';
+    
+    echo '        <div class="tipos-pokemon">';
+    foreach ($pokeArray["tipos"] as $tipo) {
+        echo '            <span>' . ucfirst($tipo) . '</span>';
+    };
+    
+    echo '        </div>';
+    echo '        <div class="habilidades-pokemon">';
+    foreach ($pokeArray["habilidades"] as $habilidad) {
+        echo '            <span>' . ucfirst($habilidad) . '</span>';
+    }
+    echo '        </div>';
+    echo '    </div>';
+    echo '</div>';
+
+
 }
 
 ?>
@@ -30,32 +114,27 @@ function renderCards($pokeArray)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokeWeb</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-    <h1>PokeCartas</h1>
-
-    <section id="pokecartas">
-        <div class="carta">
-            <div class="img-container">
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="pikachu">
-            </div>
-            <div class="datos">
-                <h3>Pikachu</h3>
-                <div class="tipos-pokemon">
-                    <span>eléctrico</span>
-                    <span>otro más</span>
-                </div>
-                <ul class="habilidades">
-                    <li>impactrueno</li>
-                    <li>chispitas</li>
-                </ul>
-            </div>
-        </div>
+<h1>GENERADOR DE 5 CARTAS(1ª GENERACION)</h1>
 
     </section>
-    <?php renderCards($pokemon) ?>
+    <div id="pokecartas">
+        <?php 
+        renderCards($pokemon1);
+        renderCards($pokemon2);
+        renderCards($pokemon3);
+        renderCards($pokemon4);
+        renderCards($pokemon5);
+
+        ?>
+
+    </div>
+    <a class="boton" href="http://localhost/UF1846_pokecartas/">Nuevas Cartas</a>
 </body>
 
 </html>

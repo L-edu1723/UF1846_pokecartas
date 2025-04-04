@@ -1,0 +1,219 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+    background-image: url('https://preview.redd.it/74crvhb3vyn61.png?auto=webp&s=295b443305c8c16c86f96b5fcd65971a794950be'); /* Imagen PNG de Rayquaza */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+}
+h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 24px;
+    color: #ffffff;
+    text-shadow:
+      2px 2px 0 #000,
+      4px 4px 0 #555;
+    letter-spacing: 1px;
+    background: repeating-linear-gradient(
+      45deg,
+      #ffcc00,
+      #ffcc00 10px,
+      #ffaa00 10px,
+      #ffaa00 20px
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    padding: 12px;
+}
+#pokecartas {
+    
+    display: flex; /* Usamos flexbox para alinear las cartas horizontalmente */
+    justify-content: flex-start; /* Alinea las cartas al inicio */
+    gap: 16px; /* Agregamos un espacio entre las cartas */
+    width: 100%; /* El contenedor ocupa todo el ancho disponible */
+    max-width: 100%; /* El contenedor no tiene un ancho máximo */
+    padding: 32px; /* Aumentamos el padding para más espacio alrededor */
+    box-sizing: border-box;
+    overflow: hidden; /* Evita la barra de desplazamiento */
+    flex-wrap: nowrap; /* Las cartas no se envuelven, permanecen en una fila */
+}
+
+.carta.fuego{
+    flex: 0 0 19%; /* Hace que cada carta ocupe el 20% del ancho disponible */
+    padding: 24px; /* Aumentamos el padding para más espacio dentro de la carta */
+    border-radius: 12px;
+    border-color:#000000;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2); /* Sombras más suaves para un mayor efecto visual */
+    text-align: center;
+    background-color: #f8290d; /* Fondo rojo para las cartas */
+    transition: transform 0.3s ease; /* Añade una transición suave al hacer hover */
+    box-sizing: border-box;
+}
+.carta.electrico{
+    flex: 0 0 19%; /* Hace que cada carta ocupe el 20% del ancho disponible */
+    padding: 24px; /* Aumentamos el padding para más espacio dentro de la carta */
+    border-radius: 12px;
+    border-color:#000000;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2); /* Sombras más suaves para un mayor efecto visual */
+    text-align: center;
+    background-color: #f6fa06; /* Fondo amarillo para las cartas */
+    transition: transform 0.3s ease; /* Añade una transición suave al hacer hover */
+    box-sizing: border-box;
+}
+.carta.planta{
+    flex: 0 0 19%; /* Hace que cada carta ocupe el 20% del ancho disponible */
+    padding: 24px; /* Aumentamos el padding para más espacio dentro de la carta */
+    border-radius: 12px;
+    border-color:#000000;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2); /* Sombras más suaves para un mayor efecto visual */
+    text-align: center;
+    background-color: #08f32f; /* Fondo verde para las cartas */
+    transition: transform 0.3s ease; /* Añade una transición suave al hacer hover */
+    box-sizing: border-box;
+}
+.carta.agua{
+    flex: 0 0 19%; /* Hace que cada carta ocupe el 20% del ancho disponible */
+    padding: 24px; /* Aumentamos el padding para más espacio dentro de la carta */
+    border-radius: 12px;
+    border-color:#000000;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2); /* Sombras más suaves para un mayor efecto visual */
+    text-align: center;
+    background-color: #00a2ff; /* Fondo azul para las cartas */
+    transition: transform 0.3s ease; /* Añade una transición suave al hacer hover */
+    box-sizing: border-box;
+}
+.carta{
+    flex: 0 0 19%; /* Hace que cada carta ocupe el 20% del ancho disponible */
+    padding: 24px; /* Aumentamos el padding para más espacio dentro de la carta */
+    border-radius: 12px;
+    border-color:#000000;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2); /* Sombras más suaves para un mayor efecto visual */
+    text-align: center;
+    background-color: #d3d1d1; /* Fondo blanco para las cartas */
+    transition: transform 0.3s ease; /* Añade una transición suave al hacer hover */
+    box-sizing: border-box;
+}
+.carta:hover {
+    transform: translateY(-8px); /* Efecto de elevación al pasar el ratón */
+}
+
+.img-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    border: 1px solid #e5e5e5;
+    padding: 12px;
+    background-color: #f9f9f9; /* Fondo gris claro para las imágenes */
+}
+
+.img-container.shiny {
+    max-width: 100%; /* Asegura que la imagen se ajuste al contenedor */
+    border-radius: 8px; /* Redondea las esquinas de la imagen */
+    border-color: cyan; /* Hace que el borde de la imagen sea de color cyan */
+}
+
+.img-container img {
+    max-width: 100%; /* Asegura que la imagen se ajuste al contenedor */
+    border-radius: 8px; /* Redondea las esquinas de la imagen */
+}
+
+.datos {
+    margin-top: 16px; /* Aumentamos el margen superior */
+}
+
+.datos h3 {
+    font-size: 22px; /* Aumentamos el tamaño de la fuente */
+    color: #333; /* Color oscuro para el nombre del Pokémon */
+    margin-bottom: 12px; /* Aumentamos el margen inferior */
+    text-transform: capitalize; /* Asegura que la primera letra sea mayúscula */
+}
+
+.tipos-pokemon {
+    display: flex;
+    gap: 8px; /* Reducimos el espacio entre los tipos */
+    justify-content: center;
+    margin-top: 12px; /* Aumentamos el margen superior */
+    flex-wrap: wrap; /* Permite que los tipos se ajusten a la línea si es necesario */
+    padding: 0 8px; /* Añadimos un poco de padding horizontal */
+}
+
+.tipos-pokemon span {
+    background-color: #967676;
+    border-radius: 24px;
+    font-size: 12px; /* Reducimos el tamaño de la fuente para ajustarlo mejor */
+    font-weight: 500;
+    padding: 6px 12px; /* Aumentamos el padding para los tipos */
+    color: white; /* Color de texto blanco */
+    text-transform: capitalize; /* Capitaliza el texto del tipo */
+}
+
+.habilidades-pokemon {
+    display: flex;
+    gap: 8px; /* Reducimos el espacio entre las habilidades */
+    justify-content: center;
+    margin-top: 16px; /* Añadimos más espacio entre los tipos y las habilidades */
+    flex-wrap: wrap; /* Permite que las habilidades se ajusten a la línea si es necesario */
+    padding: 0 8px; /* Añadimos un poco de padding horizontal */
+}
+
+.habilidades-pokemon span {
+    background-color: #d61010;
+    border-radius: 24px;
+    font-size: 12px; /* Reducimos el tamaño de la fuente para ajustarlo mejor */
+    font-weight: 500;
+    padding: 6px 12px; /* Aumentamos el padding para las habilidades */
+    color: white; /* Color de texto blanco */
+    text-transform: capitalize; /* Capitaliza el texto de las habilidades */
+}
+
+@media screen and (max-width: 768px) {
+    #pokecartas {
+        justify-content: center; /* Centra las cartas en pantallas pequeñas */
+        overflow-x: scroll; /* Permite desplazamiento horizontal en pantallas pequeñas */
+        max-width: 90%; /* Limita el ancho máximo del contenedor para pantallas grandes */
+    }
+
+    .carta {
+        
+        max-width: 250px; /* Ajusta el tamaño máximo de las cartas en pantallas pequeñas */
+        min-width: 200px; /* Ajusta el tamaño mínimo de las cartas */
+    }
+
+    .tipos-pokemon span, .habilidades-pokemon span {
+        font-size: 10px; /* Reduce más el tamaño de la fuente en pantallas pequeñas */
+    }
+}
+
+.boton {
+    background-color: rgb(228, 18, 18); /* Color de fondo rojo */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno: 10px arriba y abajo, 20px a los lados */
+    font-size: 16px; /* Tamaño de fuente */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cambia el cursor a mano cuando pasa el ratón */
+    transition: background-color 0.3s ease;
+    width: 200px; /* Tamaño fijo del botón */
+    margin-top: 32px; /* Espacio entre las cartas y el botón */
+    align-self: center; /* Centra el botón horizontalmente */
+}
+
+.boton:hover {
+    background-color: darkred; /* Cambio de color a un rojo más oscuro */
+}
