@@ -56,7 +56,7 @@ if($pokeArray["tipos"][0]=="fire"){
     $class="fuego";
 }elseif($pokeArray["tipos"][0]=="water"){
     $class="agua";
-}elseif($pokeArray["tipos"][0]=="planta"){
+}elseif($pokeArray["tipos"][0]=="grass"){
     $class="planta";
 }elseif($pokeArray["tipos"][0]=="electric"){
     $class="electrico";
@@ -72,16 +72,29 @@ if($pokeArray["tipos"][0]=="fire"){
     echo "<div class='carta $class'>";
 
     if ($probshiny==1){
-        $classShiny ='shiny';
+        $class ='shiny';
         $img = 'shiny';
-    }else{
-        $classShiny ='';
+    }elseif($pokeArray["tipos"][0]=="water"&&$probshiny!=1){
+        $class='agua';
+        $img='imagen';
+    }elseif($pokeArray["tipos"][0]=="fire"&&$probshiny!=1){
+        $class='fuego';
+        $img='imagen';
+    }elseif($pokeArray["tipos"][0]=="grass"&&$probshiny!=1){
+        $class='planta';
+        $img='imagen';
+    }elseif($pokeArray["tipos"][0]=="electric"&&$probshiny!=1){
+        $class='electrico';
+        $img='imagen';
+    }
+    else{
+        $class ='';
         $img = 'imagen';
-    };
+    }
 
-    
 
-echo "    <div class='img-container $classShiny'>";
+
+echo "    <div class='img-container $class'>";
 echo '        <img src="' . $pokeArray[$img] . '" alt="' . $pokeArray["nombre"] . '">';
 
     echo '    </div>';
